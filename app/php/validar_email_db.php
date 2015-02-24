@@ -4,7 +4,7 @@
 /* Definimos los parámetros de conexión con la bbdd: */
 $dbinfo = "mysql:dbname=validacion;host=localhost";
 $user = "root";
-$pass = "root";
+$pass = "";
 //Nos intentamos conectar:
 try {
     /* conectamos con bbdd e inicializamos conexión como UTF8 */

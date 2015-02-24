@@ -5,7 +5,7 @@
 
 $dbinfo = "mysql:dbname=provincias;host=localhost";
 $user = "root";
-$pass = "root";
+$pass = "";
 
 //Nos intentamos conectar:
 try {

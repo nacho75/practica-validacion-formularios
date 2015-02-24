@@ -4,7 +4,7 @@
 /* Definimos los parámetros de conexión con la bbdd: */
 $dbinfo = "mysql:dbname=validacion;host=localhost";
 $user = "root";
-$pass = "root";
+$pass = "";
 //Nos intentamos conectar:
 try {
     /* conectamos con bbdd e inicializamos conexión como UTF8 */
@@ -15,11 +15,11 @@ try {
 }
 /* Para hacer debug cargaríamos a mano el parámetro, descomentaríamos la siguiente línea: */
 //$_REQUEST['nif'] = "73003600A";
-if (isset($_REQUEST['documentNumber'])) {
+if (isset($_REQUEST['nif'])) {
     /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
     //echo $_REQUEST['nif'];
-    $nif = $_REQUEST['documentNumber'];
-    $sql = $db->prepare("SELECT * FROM usuarios WHERE nif=?");
+    $nif = $_REQUEST['nif'];
+    $sql = $db->prepare("SELECT * FROM usuarios WHERE dni=?");
     $sql->bindParam(1, $nif, PDO::PARAM_STR);
     $sql->execute();
     /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 

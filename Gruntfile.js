@@ -301,6 +301,9 @@ module.exports = function(grunt) {
                     src: '<%= config.app %>/php/validar_nif_db.php',
                     dest: '<%= config.dist %>/php/validar_nif_db.php'
                 }, {
+                    src: '<%= config.app %>/php/enviar.php',
+                    dest: '<%= config.dist %>/php/enviar.php'
+                },
                     src: '<%= config.app %>/php/cp.php',
                     dest: '<%= config.dist %>/php/cp.php'
                 }]
