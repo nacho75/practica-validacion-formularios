@@ -22,7 +22,7 @@ if (isset($_REQUEST['email'])) {
     $sql = $db->prepare("SELECT * FROM usuarios WHERE email=?");
     $sql->bindParam(1, $email, PDO::PARAM_STR);
     
- 
+   
     $sql->execute();
     /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 
      * ejecutada por el correspondiente objeto PDOStatement.Si la última sentencia SQL ejecutada por el objeto PDOStatement 

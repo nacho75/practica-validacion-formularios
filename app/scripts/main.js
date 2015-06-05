@@ -8,7 +8,6 @@
          },
          apellidos: {
              required: true
-
          },
          email: {
              required: true,
@@ -44,10 +43,7 @@
          },
          pass: {
              required: true,
-
              controlPass: true
-
-
          },
          pass2: {
              required: true,
@@ -62,8 +58,6 @@
              nifES: true,
              remote: "php/validar_nif_db.php"
          }
-
-
      }
  });
  $("#cp").focusout(function() {
@@ -139,7 +133,7 @@
      $cp = $("#cp").val();
      $zip = $cp.substr(0, 2);
      if ($zip == 00 || $cp < 1000 || $cp > 52999) {
-         alert("el zip es erroneo");
+         alert("el CP es erroneo");
 
      }
 
@@ -178,8 +172,9 @@
      if ($("#demandante").val() == 2) {
 
 
-         $("#nif2").html("CIF:");
-         $("#lblDemandante").html("Empresa:");
+         $("#nif2").html("CIF*:");
+         $("#lblDemandante").html("Empresa*:");
+         $("#facturacionNombre").val("");
          $("#nif").attr({
              "id": "cif",
              "name": "cif"
@@ -188,8 +183,8 @@
 
 
      } else {
-         $("#nif2").html("NIF:");
-         $("#lblDemandante").html("Nombre:");
+         $("#nif2").html("NIF*:");
+         $("#lblDemandante").html("Nombre*:");
          $("#cif").attr({
              "id": "nif",
              "name": "nif"
@@ -214,7 +209,7 @@
      });
  });
 
- jQuery.validator.addMethod("complexify", function(value, element) {
+ jQuery.validator.addMethod("controlPass", function(value, element) {
 
      var prueba = $("#progressBar").val();
 
