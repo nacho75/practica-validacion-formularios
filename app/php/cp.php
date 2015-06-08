@@ -1,11 +1,12 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 /* Descomentaríamos la siguiente línea para mostrar errores de php en el fichero: */
 // ini_set('display_errors', '1');
 /* Definimos los parámetros de conexión con la bbdd: */
 
-$dbinfo = "mysql:dbname=provincias;host=localhost";
-$user = "root";
-$pass = "";
+$dbinfo = "mysql:dbname=igmartinez_provincias;host=localhost";
+$user = "igmartinez_root";
+$pass = "123456";
 
 //Nos intentamos conectar:
 try {
